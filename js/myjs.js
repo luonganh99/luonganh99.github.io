@@ -117,8 +117,8 @@ $('#yes').click(function() {
                 {
                 width: 900,
                 confirmButtonText: 'Okii lun <3',
-                title: 'Tớ biết mà hihi :)) ',
-                text: "Tối mai tớ qua đón cậu đi chơi nhaaaaaaaaa :v :v Giờ inbox tớ lun đii ^^",
+                title: 'Tớ biết mà hihi :)))) ',
+                text: "Tối mai tớ qua đón cậu đi chơi nhaaaaaaaaa :v :v Giờ qua inbox tớ lun đii ^^",
                 background: '#cdfc5d',
                 confirmButtonColor: '#fe8a71',
                 onClose: () => {
