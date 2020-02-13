@@ -111,10 +111,15 @@ $('#yes').click(function() {
             confirmButtonColor: '#fe8a71',
             cancelButtonColor: '#f6cd61',
             confirmButtonText: 'Gửi cho tớ <3',
-            background: '#cdfc5d',
+            background: '#abc8f5',
+            imageUrl: 'img/twoface.png',
+            imageWidth: 300,
+            imageHeight: 300,
         }
     ).then((result) => {
         if(result.value) {
+            const audio = new Audio('music/tick.mp3');
+            audio.play();
             Swal.fire(
                 {
                 width: 900,
@@ -123,6 +128,9 @@ $('#yes').click(function() {
                 text: "Tối mai tớ qua đón cậu đi chơi nhaaaaaaaaa :v :v Giờ qua inbox tớ lun đii ^^",
                 background: '#cdfc5d',
                 confirmButtonColor: '#fe8a71',
+                imageUrl: 'img/man.png',
+                imageWidth: 300,
+                imageHeight: 300,
                 onClose: () => {
                     window.location = 'http://fb.com';
                   }
