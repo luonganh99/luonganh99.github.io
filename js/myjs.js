@@ -8,15 +8,15 @@ function firstAlert() {
     $('.content').hide();
     Swal.fire(
         {
-            title: 'Chàoo cậu nè!',
-            text: 'Tớ muốn hỏi cậu điều này, cậu phải trả lời thật lòng nhaaaa',
+            title: 'Chào cậu nè!',
+            text: 'Tớ muốn hỏi cậu điều này, cậu phải trả lời thật lòng nhaaaa :3',
             imageUrl: 'img/cute.jpg',
             imageWidth: 300,
             imageHeight: 300,
             background: '#b6f0dc',
             imageAlt: 'Cutee',
             confirmButtonColor: '#629e57',
-            confirmButtonText: 'Ok con dê'
+            confirmButtonText: 'Ok nè',
         }
     ).then(function(){
         $('.content').show(200);
@@ -66,12 +66,12 @@ $('#no').click(() => {
 
 function textGenerate() {
     //B1: Tạo text cần hiện
-    const showText = ' Tại vì cậu đẹp trai quá :<<< ';
+    const showText = ' Tại vì cậu đẹp trai vl hihi :>>> ';
     const array = Array.from(showText);
     
     //B2: Lấy text người dùng nhập
     const inputText = $('#text').val() ? $('#text').val() : '';
-    const count = inputText.length();
+    const count = inputText.length;
 
     //B3: Tạo text để chèn vào input
     var tempText = '';
@@ -80,14 +80,52 @@ function textGenerate() {
     if(count > 0) {
         for(i=1; i <= count; i++) {
             tempText += array[i];
-            if(i == showText.length() + 1)
+            if(i == showText.length + 1)
             {
-                $('#text').val = '';
+                $('#text').val('');
                 tempText = '';
                 break;
             }
         }
     }
-    $('#text').val = tempText;
+    $('#text').val(tempText);
     setTimeout(textGenerate, 1);
 }
+
+$('#yes').click(function() {
+    const audio = new Audio('music/tick.mp3');
+    audio.play();
+    Swal.fire(
+        {
+            title: 'Thế lý do sao cậu thích tớ đến v nè :-D',
+            html: true,
+            html: "<input id='text' type='text' class='form-control' onmousemove=textGenerate() placeholder='Nhập ở đây nè'>",
+            width: 900,
+            padding: '3em',
+            showCancelButton: true,
+            cancelButtonText: "Thôi ngại lémm :3",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#fe8a71',
+            cancelButtonColor: '#f6cd61',
+            confirmButtonText: 'Gửi cho tớ <3',
+            background: '#cdfc5d',
+        }
+    ).then((result) => {
+        if(result.value) {
+            Swal.fire(
+                {
+                width: 900,
+                confirmButtonText: 'Okii lun <3',
+                title: 'Tớ biết mà hihi :)) ',
+                text: "Tối mai tớ qua đón cậu đi chơi nhaaaaaaaaa :v :v Giờ inbox tớ lun đii ^^",
+                background: '#cdfc5d',
+                confirmButtonColor: '#fe8a71',
+                onClose: () => {
+                    window.location = 'http://fb.com';
+                  }
+                }
+            )
+        }
+    })    
+})
