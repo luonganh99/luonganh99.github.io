@@ -39,12 +39,13 @@ function moveButton() {
     audio.play();
     var x,y;
     if(screen.width <= 600){
-        x = Math.random() * 300;
-        y = Math.random() * 500;
+        x = Math.random() * 200;
+        y = Math.random() * 400;
     } else {
         var x = Math.random() * 700;
         var y = Math.random() * 500;
     }
+    console.log(screen.width);
     const left = x + 'px';
     const top = y + 'px';
     $('#no').css("left",left);
