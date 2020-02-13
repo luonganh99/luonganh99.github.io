@@ -20,6 +20,8 @@ function firstAlert() {
         }
     ).then(function(){
         $('.content').show(200);
+        const audio = new Audio('music/BeautifulGirl-SkullHaHaKwonJeongYeol10cm-3827366.mp3');
+        audio.play();
     })
 }
 
